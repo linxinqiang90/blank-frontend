@@ -164,7 +164,7 @@ class BasicLayout extends React.PureComponent {
     if (process.env.NODE_ENV === "production" && APP_TYPE !== "site") {
       return null;
     }
-    return <SettingDrawer/>;
+    return <SettingDrawer />;
   };
 
   render() {
@@ -206,12 +206,12 @@ class BasicLayout extends React.PureComponent {
           <Content style={this.getContentStyle()}>
             <Authorized
               authority={routerConfig && routerConfig.authority}
-              noMatch={<Exception403/>}
+              noMatch={<Exception403 />}
             >
               {children}
             </Authorized>
           </Content>
-          <Footer/>
+          <Footer />
         </Layout>
       </Layout>
     );
@@ -226,7 +226,7 @@ class BasicLayout extends React.PureComponent {
             )}
           </ContainerQuery>
         </DocumentTitle>
-        <Suspense fallback={<PageLoading/>}>{this.renderSettingDrawer()}</Suspense>
+        <Suspense fallback={<PageLoading />}>{this.renderSettingDrawer()}</Suspense>
       </React.Fragment>
     );
   }
@@ -239,6 +239,6 @@ export default connect(({ global, setting, menu }) => ({
   ...setting
 }))(props => (
   <Media query="(max-width: 599px)">
-    {isMobile => <BasicLayout {...props} isMobile={isMobile}/>}
+    {isMobile => <BasicLayout {...props} isMobile={isMobile} />}
   </Media>
 ));
