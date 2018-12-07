@@ -6,7 +6,12 @@
 # install && start
 $ cnpm install && npm start
 ```
-
+<h2>React</h2>
+<pre>
+用于构建用户界面的 JavaScript 库。
+React 可以非常轻松地创建用户交互界面。为你应用的每一个状态设计简洁的视图，在数据改变时 React 也可以高效地更新渲染界面。
+帮助文档:<a href="https://react.docschina.org/" target="_blank">React</a>
+</pre>
 <h2>Ant Design</h2>
 <pre>
 基于 React 实现的组件库，开发和服务于企业级后台产品
