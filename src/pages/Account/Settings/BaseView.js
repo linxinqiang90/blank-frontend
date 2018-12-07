@@ -120,7 +120,9 @@ class BaseView extends Component {
                 ],
               })(
                 <Input.TextArea
-                  placeholder={formatMessage({ id: 'app.settings.basic.profile-placeholder' })}
+                  placeholder={formatMessage({
+                    id: 'app.settings.basic.profile-placeholder',
+                  })}
                   rows={4}
                 />
               )}

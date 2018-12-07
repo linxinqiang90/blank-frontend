@@ -93,7 +93,9 @@ class LoginPage extends Component {
               login.type === 'mobile' &&
               !submitting &&
               this.renderMessage(
-                formatMessage({ id: 'app.login.message-invalid-verification-code' })
+                formatMessage({
+                  id: 'app.login.message-invalid-verification-code',
+                })
               )}
             <Mobile name="mobile" />
             <Captcha
@@ -101,7 +103,9 @@ class LoginPage extends Component {
               countDown={120}
               onGetCaptcha={this.onGetCaptcha}
               getCaptchaButtonText={formatMessage({ id: 'form.captcha' })}
-              getCaptchaSecondText={formatMessage({ id: 'form.captcha.second' })}
+              getCaptchaSecondText={formatMessage({
+                id: 'form.captcha.second',
+              })}
             />
           </Tab>
           <div>

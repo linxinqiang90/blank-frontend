@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 
+title:
   zh-CN: 使用方法作为参数
   en-US: Use function as a parameter
 ---
@@ -8,10 +8,10 @@ title:
 Use Function as a parameter
 
 ```jsx
-import RenderAuthorized from 'ant-design-pro/lib/Authorized';
-import { Alert } from 'antd';
+import RenderAuthorized from "ant-design-pro/lib/Authorized";
+import { Alert } from "antd";
 
-const Authorized = RenderAuthorized('user');
+const Authorized = RenderAuthorized("user");
 const noMatch = <Alert message="No permission." type="error" showIcon />;
 
 const havePermission = () => {
@@ -26,6 +26,6 @@ ReactDOM.render(
       showIcon
     />
   </Authorized>,
-  mountNode,
+  mountNode
 );
 ```

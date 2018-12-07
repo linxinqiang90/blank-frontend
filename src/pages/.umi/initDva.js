@@ -23,6 +23,5 @@ app.model({ namespace: 'setting', ...(require('/home/git/blank-frontend/src/mode
 app.model({ namespace: 'user', ...(require('/home/git/blank-frontend/src/models/user.js').default) });
 app.model({ namespace: 'register', ...(require('/home/git/blank-frontend/src/pages/User/models/register.js').default) });
 app.model({ namespace: 'activities', ...(require('/home/git/blank-frontend/src/pages/Dashboard/models/activities.js').default) });
-app.model({ namespace: 'chart', ...(require('/home/git/blank-frontend/src/pages/Dashboard/models/chart.js').default) });
 app.model({ namespace: 'monitor', ...(require('/home/git/blank-frontend/src/pages/Dashboard/models/monitor.js').default) });
 app.model({ namespace: 'geographic', ...(require('/home/git/blank-frontend/src/pages/Account/Settings/models/geographic.js').default) });

@@ -192,7 +192,9 @@ class Register extends Component {
                 },
                 {
                   type: 'email',
-                  message: formatMessage({ id: 'validation.email.wrong-format' }),
+                  message: formatMessage({
+                    id: 'validation.email.wrong-format',
+                  }),
                 },
               ],
             })(
@@ -225,7 +227,9 @@ class Register extends Component {
                 <Input
                   size="large"
                   type="password"
-                  placeholder={formatMessage({ id: 'form.password.placeholder' })}
+                  placeholder={formatMessage({
+                    id: 'form.password.placeholder',
+                  })}
                 />
               )}
             </Popover>
@@ -235,7 +239,9 @@ class Register extends Component {
               rules: [
                 {
                   required: true,
-                  message: formatMessage({ id: 'validation.confirm-password.required' }),
+                  message: formatMessage({
+                    id: 'validation.confirm-password.required',
+                  }),
                 },
                 {
                   validator: this.checkConfirm,
@@ -245,7 +251,9 @@ class Register extends Component {
               <Input
                 size="large"
                 type="password"
-                placeholder={formatMessage({ id: 'form.confirm-password.placeholder' })}
+                placeholder={formatMessage({
+                  id: 'form.confirm-password.placeholder',
+                })}
               />
             )}
           </FormItem>
@@ -264,18 +272,24 @@ class Register extends Component {
                 rules: [
                   {
                     required: true,
-                    message: formatMessage({ id: 'validation.phone-number.required' }),
+                    message: formatMessage({
+                      id: 'validation.phone-number.required',
+                    }),
                   },
                   {
                     pattern: /^\d{11}$/,
-                    message: formatMessage({ id: 'validation.phone-number.wrong-format' }),
+                    message: formatMessage({
+                      id: 'validation.phone-number.wrong-format',
+                    }),
                   },
                 ],
               })(
                 <Input
                   size="large"
                   style={{ width: '80%' }}
-                  placeholder={formatMessage({ id: 'form.phone-number.placeholder' })}
+                  placeholder={formatMessage({
+                    id: 'form.phone-number.placeholder',
+                  })}
                 />
               )}
             </InputGroup>
@@ -287,13 +301,17 @@ class Register extends Component {
                   rules: [
                     {
                       required: true,
-                      message: formatMessage({ id: 'validation.verification-code.required' }),
+                      message: formatMessage({
+                        id: 'validation.verification-code.required',
+                      }),
                     },
                   ],
                 })(
                   <Input
                     size="large"
-                    placeholder={formatMessage({ id: 'form.verification-code.placeholder' })}
+                    placeholder={formatMessage({
+                      id: 'form.verification-code.placeholder',
+                    })}
                   />
                 )}
               </Col>
@@ -306,7 +324,9 @@ class Register extends Component {
                 >
                   {count
                     ? `${count} s`
-                    : formatMessage({ id: 'app.register.get-verification-code' })}
+                    : formatMessage({
+                        id: 'app.register.get-verification-code',
+                      })}
                 </Button>
               </Col>
             </Row>

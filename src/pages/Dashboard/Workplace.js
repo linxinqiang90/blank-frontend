@@ -1,78 +1,67 @@
-import React, { PureComponent } from "react";
-import moment from "moment";
-import { connect } from "dva";
-import Link from "umi/link";
-import { Row, Col, Card, List, Avatar } from "antd";
+import React, { PureComponent } from 'react';
+import moment from 'moment';
+import { connect } from 'dva';
+import Link from 'umi/link';
+import { Row, Col, Card, List, Avatar } from 'antd';
+import EditableLinkGroup from '@/components/EditableLinkGroup';
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
-import { Radar } from "@/components/Charts";
-import EditableLinkGroup from "@/components/EditableLinkGroup";
-import PageHeaderWrapper from "@/components/PageHeaderWrapper";
-
-import styles from "./Workplace.less";
+import styles from './Workplace.less';
 
 const links = [
   {
-    title: "操作一",
-    href: ""
+    title: '操作一',
+    href: '',
   },
   {
-    title: "操作二",
-    href: ""
+    title: '操作二',
+    href: '',
   },
   {
-    title: "操作三",
-    href: ""
+    title: '操作三',
+    href: '',
   },
   {
-    title: "操作四",
-    href: ""
+    title: '操作四',
+    href: '',
   },
   {
-    title: "操作五",
-    href: ""
+    title: '操作五',
+    href: '',
   },
   {
-    title: "操作六",
-    href: ""
-  }
+    title: '操作六',
+    href: '',
+  },
 ];
 
-@connect(({ user, project, activities, chart, loading }) => ({
+@connect(({ user, project, activities, loading }) => ({
   currentUser: user.currentUser,
   project,
   activities,
-  chart,
-  currentUserLoading: loading.effects["user/fetchCurrent"],
-  projectLoading: loading.effects["project/fetchNotice"],
-  activitiesLoading: loading.effects["activities/fetchList"]
+  currentUserLoading: loading.effects['user/fetchCurrent'],
+  projectLoading: loading.effects['project/fetchNotice'],
+  activitiesLoading: loading.effects['activities/fetchList'],
 }))
 class Workplace extends PureComponent {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({
-      type: "user/fetchCurrent"
+      type: 'user/fetchCurrent',
     });
     dispatch({
-      type: "project/fetchNotice"
+      type: 'project/fetchNotice',
     });
     dispatch({
-      type: "activities/fetchList"
-    });
-    dispatch({
-      type: "chart/fetch"
+      type: 'activities/fetchList',
     });
   }
 
-  componentWillUnmount() {
-    const { dispatch } = this.props;
-    dispatch({
-      type: "chart/clear"
-    });
-  }
+  componentWillUnmount() {}
 
   renderActivities() {
     const {
-      activities: { list }
+      activities: { list },
     } = this.props;
     return list.map(item => {
       const events = item.template.split(/@\{([^{}]*)\}/gi).map(key => {
@@ -88,7 +77,7 @@ class Workplace extends PureComponent {
       return (
         <List.Item key={item.id}>
           <List.Item.Meta
-            avatar={<Avatar src={item.user.avatar}/>}
+            avatar={<Avatar src={item.user.avatar} />}
             title={
               <span>
                 <a className={styles.username}>{item.user.name}</a>
@@ -114,14 +103,13 @@ class Workplace extends PureComponent {
       project: { notice },
       projectLoading,
       activitiesLoading,
-      chart: { radarData }
     } = this.props;
 
     const pageHeaderContent =
       currentUser && Object.keys(currentUser).length ? (
         <div className={styles.pageHeaderContent}>
           <div className={styles.avatar}>
-            <Avatar size="large" src={currentUser.avatar}/>
+            <Avatar size="large" src={currentUser.avatar} />
           </div>
           <div className={styles.content}>
             <div className={styles.contentTitle}>
@@ -178,14 +166,14 @@ class Workplace extends PureComponent {
                     <Card.Meta
                       title={
                         <div className={styles.cardTitle}>
-                          <Avatar size="small" src={item.logo}/>
+                          <Avatar size="small" src={item.logo} />
                           <Link to={item.href}>{item.title}</Link>
                         </div>
                       }
                       description={item.description}
                     />
                     <div className={styles.projectItemContent}>
-                      <Link to={item.memberLink}>{item.member || ""}</Link>
+                      <Link to={item.memberLink}>{item.member || ''}</Link>
                       {item.updatedAt && (
                         <span className={styles.datetime} title={item.updatedAt}>
                           {moment(item.updatedAt).fromNow()}
@@ -215,19 +203,9 @@ class Workplace extends PureComponent {
               bordered={false}
               bodyStyle={{ padding: 0 }}
             >
-              <EditableLinkGroup onAdd={() => {
-              }} links={links} linkElement={Link}/>
+              <EditableLinkGroup onAdd={() => {}} links={links} linkElement={Link} />
             </Card>
-            <Card
-              style={{ marginBottom: 24 }}
-              bordered={false}
-              title="XX 指数"
-              loading={radarData.length === 0}
-            >
-              <div className={styles.chart}>
-                <Radar hasLegend height={343} data={radarData}/>
-              </div>
-            </Card>
+
             <Card
               bodyStyle={{ paddingTop: 12, paddingBottom: 12 }}
               bordered={false}
@@ -239,7 +217,7 @@ class Workplace extends PureComponent {
                   {notice.map(item => (
                     <Col span={12} key={`members-item-${item.id}`}>
                       <Link to={item.href}>
-                        <Avatar src={item.logo} size="small"/>
+                        <Avatar src={item.logo} size="small" />
                         <span className={styles.member}>{item.member}</span>
                       </Link>
                     </Col>

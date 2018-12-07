@@ -147,7 +147,9 @@ export default class GlobalHeaderRight extends PureComponent {
             list={noticeData.notification}
             title={formatMessage({ id: 'component.globalHeader.notification' })}
             name="notification"
-            emptyText={formatMessage({ id: 'component.globalHeader.notification.empty' })}
+            emptyText={formatMessage({
+              id: 'component.globalHeader.notification.empty',
+            })}
             emptyImage="https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg"
           />
           <NoticeIcon.Tab
@@ -155,7 +157,9 @@ export default class GlobalHeaderRight extends PureComponent {
             list={noticeData.message}
             title={formatMessage({ id: 'component.globalHeader.message' })}
             name="message"
-            emptyText={formatMessage({ id: 'component.globalHeader.message.empty' })}
+            emptyText={formatMessage({
+              id: 'component.globalHeader.message.empty',
+            })}
             emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
           />
           <NoticeIcon.Tab
@@ -163,7 +167,9 @@ export default class GlobalHeaderRight extends PureComponent {
             list={noticeData.event}
             title={formatMessage({ id: 'component.globalHeader.event' })}
             name="event"
-            emptyText={formatMessage({ id: 'component.globalHeader.event.empty' })}
+            emptyText={formatMessage({
+              id: 'component.globalHeader.event.empty',
+            })}
             emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
           />
         </NoticeIcon>
