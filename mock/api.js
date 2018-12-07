@@ -1,15 +1,6 @@
 import mockjs from 'mockjs';
 
-const titles = [
-  'Alipay',
-  'Angular',
-  'Ant Design',
-  'Ant Design Pro',
-  'Bootstrap',
-  'React',
-  'Vue',
-  'Webpack',
-];
+const titles = ['Alipay', 'Angular', 'Blank Frontend', 'Bootstrap', 'React', 'Vue', 'Webpack'];
 const avatars = [
   'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png', // Alipay
   'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png', // Angular

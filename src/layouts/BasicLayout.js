@@ -123,13 +123,13 @@ class BasicLayout extends React.PureComponent {
     const currRouterData = this.matchParamsPath(pathname);
 
     if (!currRouterData) {
-      return 'Ant Design Pro';
+      return 'Blank Frontend';
     }
     const pageName = formatMessage({
       id: currRouterData.locale || currRouterData.name,
       defaultMessage: currRouterData.name,
     });
-    return `${pageName} - Ant Design Pro`;
+    return `${pageName} - Blank Frontend`;
   };
 
   getLayoutStyle = () => {
