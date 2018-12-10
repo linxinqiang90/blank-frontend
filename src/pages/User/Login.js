@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import { formatMessage, FormattedMessage } from 'umi/locale';
 import Link from 'umi/link';
-import { Checkbox, Alert, Icon } from 'antd';
+import { Checkbox, Alert } from 'antd';
 import Login from '@/components/Login';
 import styles from './Login.less';
 
@@ -84,7 +84,7 @@ class LoginPage extends Component {
             <UserName name="userName" placeholder="username: admin or user" />
             <Password
               name="password"
-              placeholder="password: ant.design"
+              placeholder="password: admin"
               onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
             />
           </Tab>
@@ -120,11 +120,7 @@ class LoginPage extends Component {
             <FormattedMessage id="app.login.login" />
           </Submit>
           <div className={styles.other}>
-            <FormattedMessage id="app.login.sign-in-with" />
-            <Icon type="alipay-circle" className={styles.icon} theme="outlined" />
-            <Icon type="taobao-circle" className={styles.icon} theme="outlined" />
-            <Icon type="weibo-circle" className={styles.icon} theme="outlined" />
-            <Link className={styles.register} to="/user/register">
+            <Link to="/user/register">
               <FormattedMessage id="app.login.signup" />
             </Link>
           </div>
