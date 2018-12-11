@@ -19,6 +19,7 @@ let routes = [
       {
         "path": "/user/login",
         "component": dynamic({ loader: () => import('../User/Login'), loading: require('/home/git/blank-frontend/src/components/PageLoading/index').default }),
+        "name": "用户登录",
         "exact": true
       },
       {
